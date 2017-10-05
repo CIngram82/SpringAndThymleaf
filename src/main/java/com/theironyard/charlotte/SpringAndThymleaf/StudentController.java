@@ -15,10 +15,9 @@ public class StudentController {
     }
 
     @RequestMapping(path = "/create_student", method = RequestMethod.GET)
-    public String createStudent(String firstName, String lastname, Grade grade , Model model) {
-        Student student = new Student();
+    public String createStudent(Student student, Model model) {
 
-
+        model.addAttribute("student", student);
         /* set student firstName, lastName and grade using the http request parameters */
 
         /* add the student to the model that will be used by the view_student html file */
